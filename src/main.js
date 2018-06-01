@@ -3,13 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+/* 解决300ms */
+import fastclick from 'fastclick'
+import '@/assets/styles/reset.css'
+/* 解决1px */
+import '@/assets/styles/border.css'
 
 Vue.config.productionTip = false
+fastclick.attach(document.body)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
