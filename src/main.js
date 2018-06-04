@@ -5,14 +5,18 @@ import App from './App'
 import router from './router'
 /* 解决300ms */
 import fastclick from 'fastclick'
+/* 广告滚动 */
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'styles/reset.css'
 /* 解决1px */
 import 'styles/border.css'
 /* 图标 */
 import 'styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
+
 Vue.config.productionTip = false
 fastclick.attach(document.body)
-
+Vue.use(VueAwesomeSwiper)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
