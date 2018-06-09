@@ -20,7 +20,7 @@ export default {
   props: {
     list: Array,
     swiperOption:{
-      autoplay: false
+      autoplay : false
     }
   },
   computed: {
