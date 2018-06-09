@@ -18,27 +18,30 @@
 export default {
   name: "HomeIcons",
   props: {
-    list: Array,
-    swiperOption:{
-      autoplay : false
-    }
+    list: Array
+  },
+  data() {
+    return {
+      swiperOption: {
+        autoplay: false
+      }
+    };
   },
   computed: {
     /* icon分组 */
-    pageGroup () {
-      const pages = []
+    pageGroup() {
+      const pages = [];
       this.list.forEach((item, index) => {
-        const page = Math.floor(index / 8)
+        const page = Math.floor(index / 8);
         // console.log(page);
-        
-        if(!pages[page]) {
-          pages[page] = []
+
+        if (!pages[page]) {
+          pages[page] = [];
         }
-        pages[page].push(item)
-      })
-      return pages
-    },
-    
+        pages[page].push(item);
+      });
+      return pages;
+    }
   }
 };
 </script>
@@ -47,12 +50,15 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
-.icons >>> .swiper-slide-active
+.icons >>> .swiper-slide-active {
   height: 0;
   padding-bottom: 50%;
-.icons
-  margin-top: .1rem
-  .icon 
+}
+
+.icons {
+  margin-top: 0.1rem;
+
+  .icon {
     position: relative;
     overflow: hidden;
     float: left;
@@ -60,7 +66,7 @@ export default {
     height: 0;
     padding-bottom: 25%;
 
-    .icon-img 
+    .icon-img {
       position: absolute;
       top: 0;
       left: 0;
@@ -69,13 +75,14 @@ export default {
       box-sizing: border-box;
       padding: 0.1rem;
 
-      .icon-img-inside 
+      .icon-img-inside {
         height: 100%;
         display: block;
         margin: 0 auto;
+      }
+    }
 
-
-    .icon-desc 
+    .icon-desc {
       position: absolute;
       left: 0;
       right: 0;
@@ -84,5 +91,8 @@ export default {
       line-height: 0.44rem;
       text-align: center;
       color: $blackTextColor;
-      ellipsis()
+      ellipsis();
+    }
+  }
+}
 </style>

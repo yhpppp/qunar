@@ -40,15 +40,13 @@ export default {
     getSucc(res) {
       res = res.data;
       if (res.ret && res.data) {
-        console.log(res);
+        // console.log(res);
         const data = res.data;
         this.city = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
-        console.log(this.wee);
-        
       }
     }
   },
