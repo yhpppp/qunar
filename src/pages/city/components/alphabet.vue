@@ -1,26 +1,15 @@
 <template>
   <ul class="alp-list">
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
-    <li class="alp-item">A</li>
+    <li class="alp-item" v-for="(item, key) of citiesList" :key="key">{{key}}</li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: "CityAlphabet"
+  name: "CityAlphabet",
+  props: {
+    citiesList: Object
+  }
 };
 </script>
 
