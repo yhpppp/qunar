@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hot="hotCities" :citiesList="citiesList" ></city-list>
-    <city-alphabet :citiesList="citiesList"></city-alphabet>
+    <city-list :letter="letter" :hot="hotCities" :citiesList="citiesList" ></city-list>
+    <city-alphabet @change="changeList" :citiesList="citiesList"></city-alphabet>
   </div>
 </template>
 
@@ -23,24 +23,28 @@ export default {
   data() {
     return {
       hotCities: [],
-      citiesList: {}
+      citiesList: {},
+      letter: ''
     };
   },
   methods: {
+    /* 发送json */
     getCityData: function() {
       axios.get("api/city.json")
         .then(this.getCityDataSucc);
     },
-    getCityDataSucc: function(red) {
-      red = red.data
-      if(red.ret && red.data){
-        const data = red.data
+    /* 获得city数据 */
+    getCityDataSucc: function(res) {
+      res= res.data
+      if(res.ret && res.data){
+        const data = res.data
         this.hotCities = data.hotCities
-        console.log(data);
         this.citiesList = data.cities
-        console.log(this.citiesList);
-        
       }
+    },
+    /* 子组件事件传递数据保存 */
+    changeList: function (letter) {
+      this.letter = letter
     }
   },
   mounted() {
