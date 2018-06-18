@@ -7,6 +7,8 @@ import router from './router'
 import fastclick from 'fastclick'
 /* 广告滚动 */
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+/* vuex */
+import store from './store'
 import 'styles/reset.css'
 /* 解决1px */
 import 'styles/border.css'
@@ -21,6 +23,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
