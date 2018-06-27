@@ -2,14 +2,14 @@
   <div>
     <div class="re-title">热销推荐</div>
     <ul>
-      <li class="re-item border-topbottom" v-for="item in list" :key="item.id">
+      <router-link tag="li" :to="'/detail/' + item.id" class="re-item border-topbottom" v-for="item in list" :key="item.id">
         <img class="re-item-img" :src="item.imgUrl" alt="">
         <div class="re-item-info">
           <p class="re-item-info-title">{{item.title}}</p>
           <p class="re-item-info-desc">{{item.desc}}</p>
           <button class="re-item-info-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
