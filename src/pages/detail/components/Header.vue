@@ -25,6 +25,8 @@ data() {
 },
 methods:{
   handleScroll () {
+    console.log(1);
+    
     const scrollTop = document.documentElement.scrollTop
     if (scrollTop > 60) {
       let opacity = scrollTop / 140
@@ -38,6 +40,9 @@ methods:{
 },
 activated() {
   window.addEventListener('scroll', this.handleScroll)
+},
+deactivated() {
+  window.removeEventListener('scroll', this.handleScroll)
 },
 }
 </script>
