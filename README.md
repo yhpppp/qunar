@@ -1,7 +1,7 @@
 # qunar
 
 > A Vue.js project
-## 演示地址
+## 演示地址(使用Chrome,F12进入手机模式)
 https://yhpppp.github.io/qunar/#/
 ## Build Setup
 
